@@ -11,8 +11,16 @@ function App() {
         alignItems:"center",
         paddingTop:"15px"
     }
+
+  const Hello =() => {
+      return (
+        <>
+        <h2>Hello World</h2>
+      </>);
+    }
   return (
     <>
+      <Hello />
       <input type="text" placeholder="Name plz" />
       <p style={styles}>Items: {item.length}</p>
       <ul>
