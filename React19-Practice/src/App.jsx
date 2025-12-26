@@ -35,8 +35,8 @@ function App() {
       <Hello />
       <Hello />
       <Hello />
-      <Greetings name="Alice" age={25} />
-      
+      <Greetings name="Huzaifa" age={21} />
+
       <input type="text" placeholder="Name plz" />
       <p style={styles}>Items: {item.length}</p>
       <ul>
