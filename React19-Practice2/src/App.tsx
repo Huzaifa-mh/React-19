@@ -22,7 +22,7 @@ const Usercard = ({name, role, verified}: UsercardProps) =>{
   return (
     <div style={
       {display: 'flex',
-      gap: '8px',
+      gap: '14px',
       alignItems: 'center'}
     }>
       <h1>{name}</h1>
