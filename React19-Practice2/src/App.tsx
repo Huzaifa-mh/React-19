@@ -1,3 +1,4 @@
+import React, { Children } from 'react';
 import './App.css'
 
 //this is one way of passing the props with type annotations
@@ -19,18 +20,34 @@ type UsercardProps = {
 }
 const Usercard = ({name, role, verified}: UsercardProps) =>{
   return (
-    <>
+    <div style={
+      {display: 'flex',
+      gap: '8px',
+      alignItems: 'center'}
+    }>
       <h1>{name}</h1>
-      <p>{role}</p>
-      <p>{verified ? "Verified User" : "Unverified User"}</p>
-    </>
+      <p>{role} {verified ? "✓" : ""}</p>
+    </div>
   );
 }
+
+//we can also do content projection
+const Card = ({ children }: React.PropsWithChildren) =>{
+  return (
+    <div className='card'>{children} </div>
+  );
+};
 function App() {
   return (
     <>
-      <Greetings name="Alice" age={25} />
+      <Card>
+        <Greetings name="Alice" age={25} />
+      </Card>
+
+      <Card>
       <Usercard name="Bob" role="admin" verified={true} />
+      <Usercard name="Huzaifa" role="user" verified={false} />
+      </Card>
     </>
   )
 }
