@@ -34,7 +34,10 @@ const Usercard = ({name, role, verified}: UsercardProps) =>{
 //we can also do content projection
 const Card = ({ children }: React.PropsWithChildren) =>{
   return (
-    <div className='card'>{children} </div>
+    <div className='card'>
+      <button>Click</button>
+      <section>{children}</section>
+     </div>
   );
 };
 function App() {
