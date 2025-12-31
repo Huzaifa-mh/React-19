@@ -35,10 +35,17 @@ const Usercard = ({name, role, verified}: UsercardProps) =>{
 const Card = ({ children }: React.PropsWithChildren) =>{
   return (
     <div className='card'>
-      <button>Click</button>
+      <Button />
       <section>{children}</section>
      </div>
   );
+};
+
+const Button = () =>{
+  const handleClick = () =>{
+    alert("Button Clicked");
+  };
+  return <button onClick={handleClick}>Click Me</button>;
 };
 function App() {
   return (
