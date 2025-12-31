@@ -50,6 +50,7 @@ function App() {
       <Card>
       <Usercard name="Bob" role="admin" verified={true} />
       <Usercard name="Huzaifa" role="user" verified={false} />
+      <Usercard name="Muhammad" role="admin" verified={true} />
       </Card>
     </>
   )
