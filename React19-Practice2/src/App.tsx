@@ -42,10 +42,12 @@ const Card = ({ children }: React.PropsWithChildren) =>{
 };
 
 const Button = () =>{
-  const handleClick = () =>{
-    alert("Button Clicked");
-  };
-  return <button onClick={handleClick}>Click Me</button>;
+  // const handleClick = () =>{
+  //   alert("Button Clicked");
+  // };
+  // return <button onClick={handleClick}>Click Me</button>;
+
+  return <button onClick={() => alert("Button Clicked")}>Click Me</button>;
 };
 function App() {
   return (
