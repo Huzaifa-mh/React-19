@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import './App.css'
 
 //this is one way of passing the props with type annotations
@@ -19,6 +19,11 @@ type UsercardProps = {
   verified:boolean
 }
 const Usercard = ({name, role, verified}: UsercardProps) =>{
+
+  const greetUser = (userName: string) =>{
+    alert(`Hello, ${userName}!`);
+  };
+
   return (
     <div style={
       {display: 'flex',
@@ -27,6 +32,10 @@ const Usercard = ({name, role, verified}: UsercardProps) =>{
     }>
       <h1>{name}</h1>
       <p>{role} {verified ? "✓" : ""}</p>
+      <button onClick={(event)=>{
+        greetUser(name);
+        console.log(event.target)
+      }}>Show user info</button>
     </div>
   );
 }
@@ -35,19 +44,18 @@ const Usercard = ({name, role, verified}: UsercardProps) =>{
 const Card = ({ children }: React.PropsWithChildren) =>{
   return (
     <div className='card'>
-      <Button />
       <section>{children}</section>
      </div>
   );
 };
 
 const Button = () =>{
-  // const handleClick = () =>{
-  //   alert("Button Clicked");
-  // };
-  // return <button onClick={handleClick}>Click Me</button>;
+  const handleClick = () =>{
+    alert("Button Clicked");
+  };
+  return <button onClick={handleClick}>Click Me</button>;
 
-  return <button onClick={() => alert("Button Clicked")}>Click Me</button>;
+  // return <button onClick={() => alert("Button Clicked")}>Click Me</button>;
 };
 function App() {
   return (
