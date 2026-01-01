@@ -31,11 +31,20 @@ const Usercard = ({name, role, verified}: UsercardProps) =>{
       alignItems: 'center'}
     }>
       <h1>{name}</h1>
-      <p>{role} {verified ? "✓" : ""}</p>
+      <p>{role} 
+        {/* {verified ? "✓" : ""} */}
+        </p>
       <button onClick={(event)=>{
         greetUser(name);
         console.log(event.target)
       }}>Show user info</button>
+      {verified ? (<p>✓</p>):(<p>The user is not verified</p>)}
+
+      {/* for this i need to use hooks */}
+      {/* {!verified && <button onClick={()=>{
+        alert("Verified");
+        verified = true;
+      }}>Verify</button>} */}
     </div>
   );
 }
