@@ -14,5 +14,6 @@ export const LoginCard = () => {
     <button onClick={() => setLoggedIn(!loggedIn)}>
       {loggedIn ? "Logout" : "Login"}
     </button>
+    {loggedIn && <p>You are now logged in.</p>}
   </>;
 };
