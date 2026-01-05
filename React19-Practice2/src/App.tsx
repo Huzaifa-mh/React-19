@@ -68,6 +68,14 @@ const Button = () => {
 };
 function App() {
   const [username, setUsername] = React.useState("");
+  const [status, setStatus] = React.useState("");
+
+  const getStatusMessage = () => {
+    if (status === "pending") return "Processing...";
+    if (status === "success") return "Operation Successful!";
+    if (status === "error") return "An error occurred.";
+    return "Unknown status.";
+  }
 
   return (
     <>
@@ -89,6 +97,15 @@ function App() {
         onChange={(e)=> setUsername(e.target.value)}
         placeholder="Enter your name"/>
         <h3>Hello, {username || 'Guest'}!</h3>
+      </Card>
+
+      <Card>
+        <div>
+          <h2>{getStatusMessage()}</h2>
+          <button onClick={() => setStatus("pending")}>Set Pending</button>
+          <button onClick={() => setStatus("success")}>Set Success</button>
+          <button onClick={() => setStatus("error")}>Set Error</button>
+        </div>
       </Card>
     </>
   );
