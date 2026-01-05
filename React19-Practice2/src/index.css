@@ -50,6 +50,22 @@ button {
 button:hover {
   border-color: #646cff;
 }
+.card{
+  padding: 8px 26px;
+  background-color: #9e2525;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  width: fit-content;
+}
+.searchfield{
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e0cccc;
+  font-size: 1em;
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+}
 
 
 @media (prefers-color-scheme: light) {
@@ -63,11 +79,4 @@ button:hover {
   button {
     background-color: #f9f9f9;
   }
-}
-.card{
-  padding: 8px 26px;
-  background-color: #9e2525;
-  border-radius: 8px;
-  margin-bottom: 18px;
-  width: fit-content;
 }

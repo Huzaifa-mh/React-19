@@ -67,6 +67,8 @@ const Button = () => {
   // return <button onClick={() => alert("Button Clicked")}>Click Me</button>;
 };
 function App() {
+  const [username, setUsername] = React.useState("");
+
   return (
     <>
       <Card>
@@ -81,6 +83,12 @@ function App() {
 
       <Card>
         <LoginCard />
+      </Card>
+      <Card>
+        <input className="searchfield" type="text" value={username} 
+        onChange={(e)=> setUsername(e.target.value)}
+        placeholder="Enter your name"/>
+        <h3>Hello, {username || 'Guest'}!</h3>
       </Card>
     </>
   );
