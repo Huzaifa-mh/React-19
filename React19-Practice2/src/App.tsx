@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { LoginCard } from "./LoginCard";
+import { Filter } from "./filter";
 
 //this is one way of passing the props with type annotations
 const Greetings = ({ name, age }: { name: string; age: number }) => {
@@ -67,7 +68,7 @@ const Button = () => {
   // return <button onClick={() => alert("Button Clicked")}>Click Me</button>;
 };
 
-const SwitchExample =()=>{
+const SwitchExample = () => {
   const [role, setRole] = React.useState("user");
 
   const renderContent = () => {
@@ -83,17 +84,17 @@ const SwitchExample =()=>{
     }
   };
 
-  return(
+  return (
     <>
       {renderContent()}
-      <div style={{margin: '10px 15px'}}>
+      <div style={{ margin: "10px 15px" }}>
         <button onClick={() => setRole("admin")}>Set Admin</button>
         <button onClick={() => setRole("user")}>Set User</button>
         <button onClick={() => setRole("guest")}>Set Guest</button>
       </div>
     </>
-  )
-}
+  );
+};
 
 function App() {
   const [username, setUsername] = React.useState("");
@@ -104,7 +105,9 @@ function App() {
     if (status === "success") return "Operation Successful!";
     if (status === "error") return "An error occurred.";
     return "Unknown status.";
-  }
+  };
+
+  const fruits = ["Apple", "Banana", "Mango"];
 
   return (
     <>
@@ -122,10 +125,14 @@ function App() {
         <LoginCard />
       </Card>
       <Card>
-        <input className="searchfield" type="text" value={username} 
-        onChange={(e)=> setUsername(e.target.value)}
-        placeholder="Enter your name"/>
-        <h3>Hello, {username || 'Guest'}!</h3>
+        <input
+          className="searchfield"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Enter your name"
+        />
+        <h3>Hello, {username || "Guest"}!</h3>
       </Card>
 
       <Card>
@@ -139,6 +146,19 @@ function App() {
 
       <Card>
         <SwitchExample />
+      </Card>
+
+      <Card>
+        <div>
+          {fruits.map((fruit, index) => {
+            console.log(index);
+            return <li key={index}>{fruit}</li>;
+          })}
+        </div>
+      </Card>
+
+      <Card>
+        <Filter />
       </Card>
     </>
   );
