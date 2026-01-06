@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { LoginCard } from "./LoginCard";
 import { Filter } from "./filter";
+import { Inputs } from "./Inputs";
 
 //this is one way of passing the props with type annotations
 const Greetings = ({ name, age }: { name: string; age: number }) => {
@@ -159,6 +160,10 @@ function App() {
 
       <Card>
         <Filter />
+      </Card>
+
+      <Card>
+        <Inputs />
       </Card>
     </>
   );
