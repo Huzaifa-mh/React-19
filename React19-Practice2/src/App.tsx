@@ -66,6 +66,35 @@ const Button = () => {
 
   // return <button onClick={() => alert("Button Clicked")}>Click Me</button>;
 };
+
+const SwitchExample =()=>{
+  const [role, setRole] = React.useState("user");
+
+  const renderContent = () => {
+    switch (role) {
+      case "admin":
+        return <p>Welcome, Admin!</p>;
+      case "user":
+        return <p>Welcome, User!</p>;
+      case "guest":
+        return <p>Welcome, Guest!</p>;
+      default:
+        return <p>Role not recognized.</p>;
+    }
+  };
+
+  return(
+    <>
+      {renderContent()}
+      <div style={{margin: '10px 15px'}}>
+        <button onClick={() => setRole("admin")}>Set Admin</button>
+        <button onClick={() => setRole("user")}>Set User</button>
+        <button onClick={() => setRole("guest")}>Set Guest</button>
+      </div>
+    </>
+  )
+}
+
 function App() {
   const [username, setUsername] = React.useState("");
   const [status, setStatus] = React.useState("");
@@ -106,6 +135,10 @@ function App() {
           <button onClick={() => setStatus("success")}>Set Success</button>
           <button onClick={() => setStatus("error")}>Set Error</button>
         </div>
+      </Card>
+
+      <Card>
+        <SwitchExample />
       </Card>
     </>
   );
