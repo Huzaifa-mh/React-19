@@ -101,6 +101,8 @@ function App() {
   const [username, setUsername] = React.useState("");
   const [status, setStatus] = React.useState("");
 
+  const[count, setCount] = React.useState(0);
+
   const getStatusMessage = () => {
     if (status === "pending") return "Processing...";
     if (status === "success") return "Operation Successful!";
@@ -164,6 +166,14 @@ function App() {
 
       <Card>
         <Inputs />
+      </Card>
+
+      <Card>
+        <div>
+          <h1>{count}</h1>
+          <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+        
       </Card>
     </>
   );
