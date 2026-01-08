@@ -3,6 +3,7 @@ import "./App.css";
 import { LoginCard } from "./LoginCard";
 import { Filter } from "./filter";
 import { Inputs } from "./Inputs";
+import { Welcome } from "./Welcome";
 
 //this is one way of passing the props with type annotations
 const Greetings = ({ name, age }: { name: string; age: number }) => {
@@ -174,6 +175,10 @@ function App() {
           <button onClick={() => setCount(count + 1)}>Increment</button>
         </div>
         
+      </Card>
+
+      <Card>
+        <Welcome />
       </Card>
     </>
   );
