@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import "./App.css";
 import { LoginCard } from "./LoginCard";
 import { Filter } from "./filter";
@@ -70,7 +70,7 @@ const Button = () => {
 };
 
 const SwitchExample = () => {
-  const [role, setRole] = React.useState("user");
+  const [role, setRole] = useState("user");
 
   const renderContent = () => {
     switch (role) {
@@ -98,10 +98,10 @@ const SwitchExample = () => {
 };
 
 function App() {
-  const [username, setUsername] = React.useState("");
-  const [status, setStatus] = React.useState("");
+  const [username, setUsername] = useState("");
+  const [status, setStatus] = useState("");
 
-  const[count, setCount] = React.useState(0);
+  const[count, setCount] = useState(0);
 
   const getStatusMessage = () => {
     if (status === "pending") return "Processing...";
