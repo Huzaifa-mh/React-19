@@ -1,7 +1,7 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "./App.css";
 import { LoginCard } from "./LoginCard";
-import { Filter } from "./filter";
+import { Filter } from "./Filter";
 import { Inputs } from "./Inputs";
 import { Welcome } from "./Welcome";
 
@@ -100,6 +100,11 @@ const SwitchExample = () => {
 
 function App() {
   const [username, setUsername] = useState("");
+  useEffect(()=>{
+    console.log(`The new value of the input is ${username}`);
+    
+  }, [username]);
+
   const [status, setStatus] = useState("");
 
   const[count, setCount] = useState(0);
@@ -128,6 +133,8 @@ function App() {
       <Card>
         <LoginCard />
       </Card>
+
+    
       <Card>
         <input
           className="searchfield"
