@@ -187,6 +187,10 @@ function App() {
       <Card>
         <Welcome />
       </Card>
+
+      <Card>
+        <h2>Done.</h2>
+      </Card>
     </>
   );
 }
